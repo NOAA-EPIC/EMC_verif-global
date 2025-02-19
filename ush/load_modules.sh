@@ -120,6 +120,40 @@ elif [ $machine = JET ]; then
         "ERROR: $METplus_version is not supported on $machine"
         exit 1
     fi
+elif [ $machine = GAEAC5 ]; then
+    module reset
+    module use ${HOMEverif_global}/modulefiles
+    module load emc_verif_global_gaeac5
+    if [ $MET_version = 9.1 ]; then
+        export HOMEMET="${met_ROOT}"
+        export HOMEMET_bin_exec="bin"
+    else
+        "ERROR: $MET_version is not supported on $machine"
+        exit 1
+    fi
+    if [ $METplus_version = 3.1 ]; then
+        export HOMEMETplus="${metplus_ROOT}"
+    else
+        "ERROR: $METplus_version is not supported on $machine"
+        exit 1
+    fi
+elif [ $machine = GAEAC6 ]; then
+    module reset
+    module use ${HOMEverif_global}/modulefiles
+    module load emc_verif_global_gaeac5
+    if [ $MET_version = 9.1 ]; then
+        export HOMEMET="${met_ROOT}"
+        export HOMEMET_bin_exec="bin"
+    else
+        "ERROR: $MET_version is not supported on $machine"
+        exit 1
+    fi
+    if [ $METplus_version = 3.1 ]; then
+        export HOMEMETplus="${metplus_ROOT}"
+    else
+        "ERROR: $METplus_version is not supported on $machine"
+        exit 1
+    fi
 else
     echo "ERROR: $machine is not supported"
     exit 1

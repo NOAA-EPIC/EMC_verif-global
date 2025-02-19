@@ -197,7 +197,7 @@ cd $DATA
 ## Get machine
 #### Need upper case machine name defined
 machine=$(echo $machine | tr '[a-z]' '[A-Z]')
-if [[ "$machine" =~ ^(HERA|ORION|S4|JET|WCOSS2|HERCULES)$ ]]; then
+if [[ "$machine" =~ ^(HERA|ORION|S4|JET|WCOSS2|HERCULES|GAEAC5|GAEAC6)$ ]]; then
    echo
 else
     echo "ERROR: $machine is not a supported machine"
@@ -293,6 +293,14 @@ elif [ $machine = "WCOSS2" ]; then
     export global_archive="/lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/archive/model_data"
     export prepbufr_arch_dir="/lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/archive/obs_data/prepbufr"
     export ccpa_24hr_arch_dir="/lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/archive/obs_data/ccpa_accum24hr"
+elif [ $machine = "GAEAC5" ]; then
+    export global_archive="/gpfs/f5/ufs-ard/world-shared/global/metplus.data/archive"
+    export prepbufr_arch_dir="/gpfs/f5/ufs-ard/world-shared/global/metplus.data/prepbufr"
+    export ccpa_24hr_arch_dir="/gpfs/f5/ufs-ard/world-shared/global/metplus.data/obdata/ccpa_accum24hr"
+elif [ $machine = "GAEAC6" ]; then
+    export global_archive="/gpfs/f6/bil-fire8/world-shared/global/metplus.data/archive"
+    export prepbufr_arch_dir="/gpfs/f6/bil-fire8/world-shared/global/metplus.data/prepbufr"
+    export ccpa_24hr_arch_dir="/gpfs/f6/bil-fire8/world-shared/global/metplus.data/obdata/ccpa_accum24hr"
 fi
 
 ## Set operational directories

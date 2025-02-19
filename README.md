@@ -30,6 +30,8 @@ EMC_verif-global is supported on the following machines:
 * Orion
 * S4
 * Jet
+* Gaea-C5
+* Gaea-C6
 
 For questions or issues, please e-mail Mallory Row at mallory.row@noaa.gov.
 

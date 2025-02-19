@@ -177,7 +177,7 @@ def wget_data(wget_job_filename, wget_job_name, wget_job_output):
                   +'-l select=1:ncpus=1 '+wget_job_filename)
         job_check_cmd = ('qselect -s QR -u '+os.environ['USER']+' '
                          +'-N '+wget_job_name+' | wc -l')
-    elif machine in ['HERA', 'ORION', 'S4', 'JET', 'HERCULES']:
+    elif machine in ['HERA', 'ORION', 'S4', 'JET', 'HERCULES', 'GAEAC5', 'GAEAC6']:
         os.system('sbatch --ntasks=1 --time='
                   +walltime.strftime('%H:%M:%S')+' --partition='+QUEUESERV+' '
                   +'--account='+ACCOUNT+' --output='+wget_job_output+' '
@@ -460,9 +460,9 @@ def get_hpss_data(hpss_job_filename, save_data_dir, save_data_file,
                   +'--job-name='+hpss_job_name+' '+hpss_job_filename)
         job_check_cmd = ('squeue -u '+os.environ['USER']+' -n '
                          +hpss_job_name+' -t R,PD -h | wc -l')
-    elif machine in ['ORION', 'S4', 'HERCULES']:
+    elif machine in ['ORION', 'S4', 'HERCULES', 'GAEAC5', 'GAEAC6']:
         print("ERROR: No HPSS access from "+machine)
-    if machine not in ['ORION', 'S4', 'HERCULES']:
+    if machine not in ['ORION', 'S4', 'HERCULES', 'GAEAC5', 'GAEAC6']:
         sleep_counter, sleep_checker = 1, 10
         while (sleep_counter*sleep_checker) <= walltime_seconds:
             sleep(sleep_checker)
