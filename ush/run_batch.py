@@ -72,7 +72,6 @@ with open(job_card_filename, 'a') as job_card:
         job_card.write('#SBATCH --time=6:00:00\n')
     elif machine == 'GAEAC5':
         job_card.write('#!/bin/sh\n')
-        job_card.write('#SBATCH --qos='+QUEUE+'\n')
         job_card.write('#SBATCH --account='+ACCOUNT+'\n')
         job_card.write('#SBATCH --job-name='+job_name+'\n')
         job_card.write('#SBATCH --output='+job_output_filename+'\n')
@@ -82,7 +81,6 @@ with open(job_card_filename, 'a') as job_card:
         job_card.write('#SBATCH --time=6:00:00\n')
     elif machine == 'GAEAC6':
         job_card.write('#!/bin/sh\n')
-        job_card.write('#SBATCH --qos='+QUEUE+'\n')
         job_card.write('#SBATCH --account='+ACCOUNT+'\n')
         job_card.write('#SBATCH --job-name='+job_name+'\n')
         job_card.write('#SBATCH --output='+job_output_filename+'\n')
