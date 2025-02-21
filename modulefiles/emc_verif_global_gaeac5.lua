@@ -7,7 +7,7 @@ prepend_path("MODULEPATH", "/ncrc/proj/epic/spack-stack/spack-stack-1.6.0/envs/g
 stack_intel_ver=os.getenv("stack_intel_ver") or "2023.2.0"
 load(pathJoin("stack-intel", stack_intel_ver))
 
-Core_ver=os.getenv("Core_ver") or "24.11"
+Core_ver=os.getenv("Core_ver") or "24.10"
 load(pathJoin("Core", Core_ver))
 
 prod_util_ver=os.getenv("prod_util_ver") or "2.1.1"
