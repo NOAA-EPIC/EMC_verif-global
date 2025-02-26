@@ -124,6 +124,7 @@ elif [ $machine = GAEAC5 ]; then
     module reset
     module use ${HOMEverif_global}/modulefiles
     module load emc_verif_global_gaeac5
+    module swap python/3.11.6 python/3.9
     if [[ "${MET_version}" =~ ^(9.1) ]]; then
         export HOMEMET="${met_ROOT}"
         export HOMEMET_bin_exec="bin"
@@ -141,6 +142,7 @@ elif [ $machine = GAEAC6 ]; then
     module reset
     module use ${HOMEverif_global}/modulefiles
     module load emc_verif_global_gaeac6
+    module swap python/3.11.6 python/3.11
     if [ $MET_version = 9.1 ]; then
         export HOMEMET="${met_ROOT}"
         export HOMEMET_bin_exec="bin"
@@ -154,8 +156,6 @@ elif [ $machine = GAEAC6 ]; then
         "ERROR: $METplus_version is not supported on $machine"
         exit 1
     fi
-    module swap python/3.11.6 python/3.11
-    module list
 else
     echo "ERROR: $machine is not supported"
     exit 1
