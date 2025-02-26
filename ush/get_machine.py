@@ -57,8 +57,8 @@ if 'machine' not in vars():
     )
     s4_match = re.match(re.compile(r"s4-submit.ssec.wisc.edu"), hostname)
     jet_match = re.match(re.compile(r"^fe[0-9]{1}"), hostname)
-    gaeac5_match = re.match(re.compile(r"^gaea5[0-9]{1}"), hostname)
-    gaeac6_match = re.match(re.compile(r"^gaea6[0-9]{1}"), hostname)
+    gaeac5_match = re.match(re.compile(r"^gaea5[1-8]{1}"), hostname)
+    gaeac6_match = re.match(re.compile(r"^gaea6[1-8]{1}"), hostname)
     if cactus_match or dogwood_match or cactus_match2 or dogwood_match2:
         machine = 'WCOSS2'
     elif hera_match:
