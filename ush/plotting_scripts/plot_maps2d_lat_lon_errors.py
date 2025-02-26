@@ -296,6 +296,10 @@ elif machine == 'ORION':
     config['data_dir']='/home/mrow/.local/share/cartopy'
 elif machine == 'HERCULES':
     config['data_dir']='/home/dhuber/.local/share/cartopy'
+elif machine == 'GAEAC5':
+    config['data_dir']='/gpfs/f5/ufs-ard/world-shared/global/metplus.data/cartopy'
+elif machine == 'GAEAC6':
+    config['data_dir']='/gpfs/f6/bil-fire8/world-shared/global/metplus.data/cartopy'
 
 # Set up information
 env_var_model_list = []

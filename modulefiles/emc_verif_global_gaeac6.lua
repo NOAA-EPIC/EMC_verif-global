@@ -1,5 +1,5 @@
 help([[
-Load environment to run EMC_verif-global on Gaea-C5 using Intel
+Load environment to run EMC_verif-global on Gaea-C6 using Intel
 ]])
 
 prepend_path("MODULEPATH", "/ncrc/proj/epic/spack-stack/c6/spack-stack-1.6.0/envs/gsi-addon/install/modulefiles/Core")
