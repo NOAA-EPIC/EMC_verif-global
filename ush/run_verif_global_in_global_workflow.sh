@@ -208,7 +208,7 @@ export OUTPUTROOT=${DATA}
 mkdir -p $DATA
 cd $DATA
 
-if [[ "$machine" =~ ^(URSA|HERA|ORION|WCOSS2|HERCULES|GAEAC6)$ ]]; then
+if [[ "$machine" =~ ^(URSA|HERA|ORION|WCOSS2|HERCULES|GAEAC6|AWS-EC2)$ ]]; then
    echo
 else
     echo "ERROR: $machine is not a supported machine"
@@ -291,6 +291,10 @@ elif [ $machine = "GAEAC6" ]; then
     export global_archive="/gpfs/f6/drsa-precip3/world-shared/role.glopara/data/metplus.data/archive"
     export prepbufr_arch_dir="/gpfs/f6/drsa-precip3/world-shared/role.glopara/data/metplus.data/prepbufr"
     export ccpa_24hr_arch_dir="/gpfs/f6/drsa-precip3/world-shared/role.glopara/data/metplus.data/obdata/ccpa_accum24hr"
+elif [ $machine = "AWS-EC2" ]; then
+    export global_archive="/lustre/archive/data/metplus.data/prepbufr"
+    export prepbufr_arch_dir="/lustre/archive/data/metplus.data/prepbufr"
+    export ccpa_24hr_arch_dir="/lustre/archive/data/metplus.data/obdata/ccpa_accum24hr"
 fi
 
 ## Set operational directories
